@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ note.title }}</ion-title>
+    <ion-buttons end> <!-- // for button to be positioned right -->      
+      <button ion-button icon-only (click)="onTrash()" *ngIf="!newNoteFlag" > <!-- *ngIf="product.id"-->  
+      <!-- show trash button only if its existing note -->
+        <ion-icon name="trash"></ion-icon>
+      </button>    
+    </ion-buttons>        
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Title</ion-label>
+      <ion-input type="text" [(ngModel)]="note.title" value="" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Date</ion-label>
+      <ion-datetime type="text" [(ngModel)]="note.date" required></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea placeholder="Content" [(ngModel)]="note.content" required></ion-textarea>
+    </ion-item>    
+  </ion-list>  
+</ion-content>
